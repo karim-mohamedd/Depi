@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-
         SCANNER = tool 'sonar-scanner'
     }
+    
     stages {
         stage('Git Checkout') {
             steps {
@@ -14,11 +14,23 @@ pipeline {
 
         stage('SonarQube') {
             steps {
-                withSonarQubeEnv('sonar'){
-                    sh  '''$SCANNER/bin/sonar-scanner - Dsonar.projectKey=Depi-Pipeline -Dsonar-projectName=Depi-Pipeline -Dsonar.java.bin=. '''
+                withSonarQubeEnv('sonar') {
+                    sh '''
+                        $SCANNER/bin/sonar-scanner -Dsonar.projectKey=Depi-Pipeline -Dsonar.projectName=Depi-Pipeline -Dsonar.java.binaries=.
+                    '''
                 }
             }
         }
+        stage('adservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                        sh 'docker build -t devilcontainer/adservice:latest /var/lib/workspace/DepiPipeline/src/adservice'
+                    }
 
+                }
+            }
         }
+    }
 }
