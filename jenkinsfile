@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    environment {
+
+        SCANNER = tool 'sonar-scanner'
+    }
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'karim', url: 'https://github.com/karim-mohamedd/Depi.git'
+            }
+        }
+
+        stage('SonarQube') {
+            steps {
+                withSonarQubeEnv('sonar'){
+                    sh  '''$SCANNER/bin/sonar-scanner - Dsonar.projectKey=Depi-Pipeline -Dsonar-projectName=Depi-Pipeline -Dsonar.java.bin=. '''
+                }
+            }
+        }
+
+        }
+}
