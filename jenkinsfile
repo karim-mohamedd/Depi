@@ -4,14 +4,12 @@ pipeline {
     environment {
         SCANNER = tool 'sonar-scanner'
     }
-    
     stages {
         stage('Git Checkout') {
             steps {
                 git branch: 'karim', url: 'https://github.com/karim-mohamedd/Depi.git'
             }
         }
-
         stage('SonarQube') {
             steps {
                 withSonarQubeEnv('sonar') {
@@ -25,10 +23,119 @@ pipeline {
             steps {
                 script {
                     // This step should not normally be used in your script. Consult the inline help for details.
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh 'docker build -t devilcontainer/adservice:latest /var/lib/workspace/DepiPipeline/src/adservice'
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/adservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/adservice'
                     }
-
+                }
+            }
+        }
+        stage('cartservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/cartservice:latest /var/jenkins_home/workspace/DepiPipeline/src/cartservice/src'
+                    }
+                }
+            }
+        }
+        stage('checkoutservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/checkoutservice:latest /var/jenkins_home/workspace/DepiPipeline/src/checkoutservice'
+                    }
+                }
+            }
+        }
+        stage('currencyservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/currencyservice:latest /var/jenkins_home/workspace/DepiPipeline/src/currencyservice'
+                    }
+                }
+            }
+        }
+        stage('emailservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/emailservice:latest /var/jenkins_home/workspace/DepiPipeline/src/emailservice'
+                    }
+                }
+            }
+        }
+        stage('frontend') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/frontend:latest /var/jenkins_home/workspace/DepiPipeline/src/frontend'
+                    }
+                }
+            }
+        }
+        stage('loadgenerator') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/loadgenerator:latest /var/jenkins_home/workspace/DepiPipeline/src/loadgenerator'
+                    }
+                }
+            }
+        }
+        stage('paymentservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/paymentservice:latest /var/jenkins_home/workspace/DepiPipeline/src/paymentservice'
+                    }
+                }
+            }
+        }
+        stage('productcatalogservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/productcatalogservice:latest /var/jenkins_home/workspace/DepiPipeline/src/productcatalogservice'
+                    }
+                }
+            }
+        }
+        stage('recommendationservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/recommendationservice:latest /var/jenkins_home/workspace/DepiPipeline/src/recommendationservice'
+                    }
+                }
+            }
+        }
+        stage('shippingservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/shippingservice:latest /var/jenkins_home/workspace/DepiPipeline/src/shippingservice'
+                    }
+                }
+            }
+        }
+        stage('shoppingassistantservice') {
+            steps {
+                script {
+                    // This step should not normally be used in your script. Consult the inline help for details.
+                   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                        sh 'docker build -t devilcontainer/shoppingassistantservice:latest /var/jenkins_home/workspace/DepiPipeline/src/shoppingassistantservice'
+                    }
                 }
             }
         }
