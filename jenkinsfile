@@ -24,8 +24,10 @@ pipeline {
                 stage('adservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/adservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/adservice'
+                                sh 'docker push devilcontainer/adservice:latest'
+                                sh 'docker rmi -f devilcontainer/adservice:latest'
                             }
                         }
                     }
@@ -33,8 +35,10 @@ pipeline {
                 stage('cartservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/cartservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/cartservice/src'
+                                sh 'docker push devilcontainer/cartservice:latest'
+                                sh 'docker rmi -f devilcontainer/cartservice:latest'
                             }
                         }
                     }
@@ -42,8 +46,10 @@ pipeline {
                 stage('checkoutservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/checkoutservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/checkoutservice'
+                                sh 'docker push devilcontainer/checkoutservice:latest'
+                                sh 'docker rmi -f devilcontainer/checkoutservice:latest'
                             }
                         }
                     }
@@ -51,8 +57,10 @@ pipeline {
                 stage('currencyservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/currencyservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/currencyservice'
+                                sh 'docker push devilcontainer/currencyservice:latest'
+                                sh 'docker rmi -f devilcontainer/currencyservice:latest'
                             }
                         }
                     }
@@ -60,8 +68,10 @@ pipeline {
                 stage('emailservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/emailservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/emailservice'
+                                sh 'docker push devilcontainer/emailservice:latest'
+                                sh 'docker rmi -f devilcontainer/emailservice:latest'
                             }
                         }
                     }
@@ -69,8 +79,10 @@ pipeline {
                 stage('frontend') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/frontend:latest /var/jenkins_home/workspace/Depi-Pipeline/src/frontend'
+                                sh 'docker push devilcontainer/frontend:latest'
+                                sh 'docker rmi -f devilcontainer/frontend:latest'
                             }
                         }
                     }
@@ -78,8 +90,10 @@ pipeline {
                 stage('loadgenerator') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/loadgenerator:latest /var/jenkins_home/workspace/Depi-Pipeline/src/loadgenerator'
+                                sh 'docker push devilcontainer/loadgenerator:latest'
+                                sh 'docker rmi -f devilcontainer/loadgenerator:latest'
                             }
                         }
                     }
@@ -87,8 +101,10 @@ pipeline {
                 stage('paymentservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/paymentservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/paymentservice'
+                                sh 'docker push devilcontainer/paymentservice:latest'
+                                sh 'docker rmi -f devilcontainer/paymentservice:latest'
                             }
                         }
                     }
@@ -96,8 +112,10 @@ pipeline {
                 stage('productcatalogservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/productcatalogservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/productcatalogservice'
+                                sh 'docker push devilcontainer/productcatalogservice:latest'
+                                sh 'docker rmi -f devilcontainer/productcatalogservice:latest'
                             }
                         }
                     }
@@ -105,8 +123,10 @@ pipeline {
                 stage('recommendationservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                           withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/recommendationservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/recommendationservice'
+                                sh 'docker push devilcontainer/recommendationservice:latest'
+                                sh 'docker rmi -f devilcontainer/recommendationservice:latest'
                             }
                         }
                     }
@@ -114,8 +134,10 @@ pipeline {
                 stage('shippingservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/shippingservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/shippingservice'
+                                sh 'docker push devilcontainer/shippingservice:latest'
+                                sh 'docker rmi -f devilcontainer/shippingservice:latest'
                             }
                         }
                     }
@@ -123,8 +145,10 @@ pipeline {
                 stage('shoppingassistantservice') {
                     steps {
                         script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker', url: 'https://hub.docker.com/repository/docker/devilcontainer/depi-repo/general') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/shoppingassistantservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/shoppingassistantservice'
+                                sh 'docker push devilcontainer/shoppingassistantservice:latest'
+                                sh 'docker rmi -f devilcontainer/shoppingassistantservice:latest'
                             }
                         }
                     }
