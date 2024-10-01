@@ -4,6 +4,7 @@ pipeline {
     environment {
         SCANNER = tool 'sonar-scanner'
     }
+
     stages {
         stage('Git Checkout') {
             steps {
@@ -123,7 +124,7 @@ pipeline {
                 stage('recommendationservice') {
                     steps {
                         script {
-                           withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
+                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
                                 sh 'docker build -t devilcontainer/recommendationservice:latest /var/jenkins_home/workspace/Depi-Pipeline/src/recommendationservice'
                                 sh 'docker push devilcontainer/recommendationservice:latest'
                                 sh 'docker rmi -f devilcontainer/recommendationservice:latest'
@@ -154,6 +155,33 @@ pipeline {
                     }
                 }
             }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Your build steps here, e.g., sh 'make'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Your test steps here, e.g., sh 'pytest'
+            }
+        }
+    }
+    post {
+        success {
+            script {
+                slackSend(channel: 'jenkins', message: "Build succeeded everything is ok : ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+            }
+        }
+        failure {
+            script {
+                slackSend(channel: 'jenkins', message: "Build failed check the error : ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+            }
+        }
+        always {
+            echo 'This will always run, regardless of success or failure.'
         }
     }
 }
