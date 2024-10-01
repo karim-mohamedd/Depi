@@ -156,18 +156,6 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                // Your build steps here, e.g., sh 'make'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Your test steps here, e.g., sh 'pytest'
-            }
-        }
     }
     post {
         success {
