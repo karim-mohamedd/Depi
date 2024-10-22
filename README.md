@@ -9,8 +9,7 @@ If you’re using this demo, please ★Star this repository to show your interes
 
 ## Architecture
 
-[![Architecture of
-microservices](/docs/img/architecture-diagram.png)](/docs/img/architecture-diagram.png)
+<img width="1778" alt="architecture-diagram" src="https://github.com/user-attachments/assets/61fa7e60-a8fe-4c4c-aacd-b3e5f2b2c8c8">
 
 **Online Boutique** is composed of 11 microservices written in different languages that communicate with each other over gRPC.
 
@@ -96,8 +95,6 @@ Congrats! You've deployed the Online Boutique application on AWS EKS.
 - **App Mesh**: Follow these [instructions](https://aws-appmesh-link) to deploy Online Boutique with AWS App Mesh for service-to-service networking.
 - **Non-EKS Clusters (Minikube, Kind, etc)**: See the Development guide for deploying Online Boutique on non-EKS clusters.
 
-### Other Customizations
-The `/kustomize` directory contains instructions for customizing the deployment of Online Boutique with other variations like Amazon CloudWatch monitoring, encryption, and more.
 
 ## Documentation and Demos Featuring Online Boutique
 - **Platform Engineering in Action**: Deploy the Online Boutique sample app using AWS CDK and AWS Proton.
@@ -110,16 +107,9 @@ The `/kustomize` directory contains instructions for customizing the deployment 
 
 
 
-## Screenshots of the project
-
-| Home Page                                                                                                         | Checkout Screen                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [![Screenshot of store homepage](/docs/img/online-boutique-frontend-1.png)](/docs/img/online-boutique-frontend-1.png) | [![Screenshot of checkout screen](/docs/img/online-boutique-frontend-2.png)](/docs/img/online-boutique-frontend-2.png) |
-
-
 ## Team
 
-The **Depi-Project** project is managed and maintained by a dedicated team with passion in DevOps, software development, and cloud infrastructure. Our team ensures that the pipeline is efficient, reliable, and scalable to support continuous integration and continuous delivery.
+The **Depi-Project** project is managed and maintained by a dedicated team with passion in DevOps, software development, and cloud infrastructure. Our team ensures that the pipeline is efficient
 
 ### Team Members:
 - **Karim Mohamed**   
@@ -140,5 +130,6 @@ The **Depi-Project** project is managed and maintained by a dedicated team with 
  Mohamed Abo-Bakr is responsible for writing comprehensive reports about the Depi-Pipeline project, documenting progress, challenges, and outcomes. His role also includes implementing and managing the Slack integration within the pipeline to enhance team communication.
 
 - **Karim Eteam**   
- Karim Eteam is responsible for managing the deployment processes for the Depi-Pipeline. His primary focus is on managing the Docker, Kubernetes, and cloud deployment infrastructure for the services.
+ Karim Eteam is responsible for managing the deployment processes for the Depi-Pipeline. His primary focus is on managing the Docker, Kubernetes, and cloud deployment infrastructure for 
+ the services.
 
