@@ -118,16 +118,20 @@ The **Depi-Project** project is managed and maintained by a dedicated team with 
   ensuring it integrates smoothly with Jenkins, Docker, SonarQube, and other essential tools
 
 - **Ahmed Elenany**  
-  Ahmed Elenany is responsible for managing the deployment processes within the pipeline. His focus is on ensuring that the microservices are deployed seamlessly across environments, maintaining version control, and handling production releases
+  Ahmed Elenany is responsible for managing the deployment processes within the pipeline. His focus is on ensuring that the microservices are deployed seamlessly across environments, 
+  maintaining version control, and handling production releases
 
 - **Habiba Eteam**   
-  Habiba Eteam is responsible for The documentation for the entire Project and its processes. She ensures that all technical details, workflows, and guidelines are clearly documented to support team members, contributors, and users plays a supporting role in Continuous Integration (CI) and helped in The implementation of the Pipeline 
+  Habiba Eteam is responsible for The documentation for the entire Project and its processes. She ensures that all technical details, workflows, and guidelines are clearly documented to 
+  support team members, contributors, and users plays a supporting role in Continuous Integration (CI) and helped in The implementation of the Pipeline 
   
 - **Mohamed Hani**   
- Mohamed Hani is responsible for managing and optimizing the Kubernetes clusters that host the microservices in the Depi-Pipeline. His expertise ensures that the infrastructure remains stable, scalable, and highly available.
+ Mohamed Hani is responsible for managing and optimizing the Kubernetes clusters that host the microservices in the Depi-Pipeline. His expertise ensures that the infrastructure remains 
+ stable, scalable, and highly available.
 
 - **Mohamed Abo-Bakr**   
- Mohamed Abo-Bakr is responsible for writing comprehensive reports about the Depi-Pipeline project, documenting progress, challenges, and outcomes. His role also includes implementing and managing the Slack integration within the pipeline to enhance team communication.
+ Mohamed Abo-Bakr is responsible for writing comprehensive reports about the Depi-Pipeline project, documenting progress, challenges, and outcomes. His role also includes implementing 
+ and managing the Slack integration within the pipeline to enhance team communication.
 
 - **Karim Eteam**   
  Karim Eteam is responsible for managing the deployment processes for the Depi-Pipeline. His primary focus is on managing the Docker, Kubernetes, and cloud deployment infrastructure for 
