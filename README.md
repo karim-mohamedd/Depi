@@ -119,7 +119,7 @@ The `/kustomize` directory contains instructions for customizing the deployment 
 
 ## Team
 
-The **Depi-Pipeline** project is managed and maintained by a dedicated team with passion in DevOps, software development, and cloud infrastructure. Our team ensures that the pipeline is efficient, reliable, and scalable to support continuous integration and continuous delivery.
+The **Depi-Project** project is managed and maintained by a dedicated team with passion in DevOps, software development, and cloud infrastructure. Our team ensures that the pipeline is efficient, reliable, and scalable to support continuous integration and continuous delivery.
 
 ### Team Members:
 - **Karim Mohamed**   
