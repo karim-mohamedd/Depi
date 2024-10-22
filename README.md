@@ -60,40 +60,8 @@ aws eks create-cluster --name $CLUSTER_NAME --region $AWS_REGION --kubernetes-ve
 
 This may take a few minutes.
 
-### 4. Deploy Online Boutique to the Cluster
-```bash
-kubectl apply -f ./release/kubernetes-manifests.yaml
-```
 
-Wait for the pods to be ready:
-```bash
-kubectl get pods
-```
 
-After a few minutes, you should see the Pods in a Running state:
-
-```
-NAME                                     READY   STATUS    RESTARTS   AGE
-adservice-76bdd69666-ckc5j               1/1     Running   0          2m58s
-cartservice-66d497c6b7-dp5jr             1/1     Running   0          2m59s
-...
-```
-
-### 5. Access the Web Frontend
-Get the frontend’s external IP:
-```bash
-kubectl get service frontend-external | awk '{print $4}'
-```
-
-Visit `http://EXTERNAL_IP` in a web browser to access your instance of Online Boutique.
-
-Congrats! You've deployed the Online Boutique application on AWS EKS.
-
-## Additional Deployment Options
-
-- **Terraform**: Follow these [instructions](https://aws-terraform-link) to deploy Online Boutique using Terraform.
-- **App Mesh**: Follow these [instructions](https://aws-appmesh-link) to deploy Online Boutique with AWS App Mesh for service-to-service networking.
-- **Non-EKS Clusters (Minikube, Kind, etc)**: See the Development guide for deploying Online Boutique on non-EKS clusters.
 
 
 ## Documentation and Demos Featuring Online Boutique
