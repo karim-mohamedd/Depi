@@ -105,19 +105,6 @@ pipeline {
                         }
                     }
                 }
-                stage('loadgenerator') {
-                    steps {
-                        script {
-                            withDockerRegistry(credentialsId: 'docker-cred', toolName: 'Docker') {
-                                sh '''
-                                    docker build -t devilcontainer/loadgenerator:latest /var/jenkins_home/workspace/Depi-Pipeline/src/loadgenerator
-                                    docker push devilcontainer/loadgenerator:latest
-                                    docker rmi -f devilcontainer/loadgenerator:latest
-                                '''
-                            }
-                        }
-                    }
-                }
                 stage('paymentservice') {
                     steps {
                         script {
