@@ -11,7 +11,7 @@ If you’re using this demo, please ★Star this repository to show your interes
 
 <img width="1778" alt="architecture-diagram" src="https://github.com/user-attachments/assets/61fa7e60-a8fe-4c4c-aacd-b3e5f2b2c8c8">
 
-**Online Boutique** is composed of 11 microservices written in different languages that communicate with each other over gRPC.
+**Online Boutique** is composed of 11 microservices written in different languages that communicate with each other over EKS.
 
 ### Architecture of Microservices
 Find Protocol Buffers Descriptions in the `./protos` directory.
