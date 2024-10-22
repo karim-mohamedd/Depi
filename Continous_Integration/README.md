@@ -66,7 +66,6 @@ In this stage, multiple microservices are built in parallel. Each microservice i
 - **CurrencyService**
 - **EmailService**
 - **Frontend**
-- **LoadGenerator**
 - **PaymentService**
 - **ProductCatalogService**
 - **RecommendationService**
